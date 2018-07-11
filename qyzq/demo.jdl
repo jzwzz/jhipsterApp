@@ -1,0 +1,21 @@
+//双斜杠注释会被忽略掉
+/** 这种注释会带到生成的代码里去 */
+entity Person {
+    name String required,
+    sex Sex
+}
+
+enum Sex {
+    MALE, FEMALE
+}
+
+entity Country{
+    countryName String
+}
+
+relationship ManyToOne {
+    Person{country} to Country
+}
+
+paginate Person with pagination
+paginate Country with infinite-scroll
